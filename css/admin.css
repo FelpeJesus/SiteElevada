@@ -1,0 +1,107 @@
+.admin-container { 
+    max-width: 800px; 
+    margin: 40px auto; 
+    padding: 20px; 
+    background: #fff; 
+    color: #333; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+.admin-header { 
+    text-align: center; 
+    margin-bottom: 30px; 
+}
+.admin-form-group { 
+    margin-bottom: 15px; 
+}
+.admin-form-group label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+}
+.admin-form-group input, .admin-form-group textarea { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+.admin-btn { 
+    background: #E11383; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    font-weight: bold; 
+}
+.admin-btn:hover { 
+    background: #b00f66; 
+}
+.admin-section { 
+    margin-top: 40px; 
+    padding-top: 20px; 
+    border-top: 2px solid #eee; 
+}
+.item-list { 
+    list-style: none; 
+    padding: 0; 
+}
+.item-list li { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: #f9f9f9; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+}
+.item-list img { 
+    width: 50px; 
+    height: 50px; 
+    object-fit: cover; 
+    margin-right: 15px; 
+}
+.btn-delete { 
+    background: #ff4c4c; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+}
+#dashboard { 
+    display: none; 
+}
+
+
+/* Garantir que todos os textos internos não fiquem brancos */
+.admin-container h2,
+.admin-container h3,
+.admin-container p,
+.admin-container label,
+.item-list li div {
+    color: #333;
+}
+
+.admin-form-group input, 
+.admin-form-group textarea {
+    color: #333;
+    background-color: #fff;
+}
+
+
+.btn-edit { 
+    background: #4CAF50; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+}
+.btn-edit:hover {
+    background: #45a049;
+}
+
+.admin-container h2, .admin-container h3 {
+    font-family: 'Oswald', sans-serif;
+}

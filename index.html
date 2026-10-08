@@ -6,7 +6,7 @@
     <title>Gráfica Elevada</title>
 
     <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,8 +19,8 @@
   <body>
     <header class="navbar">
       <div class="container">
-        <a href="/index.html" class="logo">
-          <img src="/img/logo.jpg" alt="Logo Gráfica Elevada" />
+        <a href="index.html" class="logo">
+          <img src="img/logo.jpg" alt="Logo Gráfica Elevada" />
           <span><strong>Gráfica</strong>Elevada</span>
         </a>
         <button class="menu-toggle" aria-label="Abrir menu">
@@ -30,7 +30,7 @@
         </button>
         <nav>
           <ul>
-            <li><a href="/index.html" class="active">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="/html/sobreNós.html">Sobre Nós</a></li>
             <li><a href="/html/serviços.html">Serviços</a></li>
             <li><a href="/html/portfólio.html">Portfólio</a></li>
@@ -72,19 +72,8 @@
     <section class="principais-servicos">
       <div class="container">
         <h2>Nossos Principais Produtos</h2>
-        <div class="servicos-grid">
-          <div class="servico-card">
-            <h3>Cartões de Visita</h3>
-            <p>Acabamentos premium, verniz localizado e mais.</p>
-          </div>
-          <div class="servico-card">
-            <h3>Adesivos e Rótulos</h3>
-            <p>Recorte especial para seus produtos e embalagens.</p>
-          </div>
-          <div class="servico-card">
-            <h3>Banners e Lonas</h3>
-            <p>Impressão em grande formato para seu evento ou fachada.</p>
-          </div>
+        <div class="servicos-grid" id="grid-servicos-principais">
+          <!-- Os itens serão carregados automaticamente a partir de config/dados.js -->
         </div>
         <a href="/html/serviços.html" class="link-todos-servicos"
           >Ver todos os serviços ➔</a
@@ -111,7 +100,7 @@
         <div class="footer-section footer-logo-section">
           <a href="index.html">
           <img
-            src="/img/logo.jpg"
+            src="img/logo.jpg"
             alt="Logo Gráfica Elevada"
             class="footer-logo"
           />
@@ -170,7 +159,7 @@
       </div>
     </footer>
     <a href="#" class="back-to-top-btn" title="Voltar ao topo"><img src="/img/svg/angulo-da-seta-para-cima.png" alt="Voltar ao topo"></a>
-    <!-- Adiciona o script para o menu flutuante -->
-    <script src="/script/javascript.js"></script>
+    <!-- Adiciona o script principal via módulo (Firebase) -->
+    <script type="module" src="/script/javascript.js"></script>
   </body>
 </html>

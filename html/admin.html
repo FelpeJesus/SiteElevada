@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="/index.html" class="logo">
+        <img src="/img/logo.jpg" alt="Logo Gráfica Elevada" />
+        <span><strong>Gráfica</strong>Elevada</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/html/sobreNós.html">Sobre Nós</a></li>
+          <li><a href="/html/serviços.html">Serviços</a></li>
+          <li><a href="/html/portfólio.html">Portfólio</a></li>
+          <li>
+            <a
+              href="https://api.whatsapp.com/send/?phone=5583981985937&text=Ol%C3%A1%2C+quero+fechar+o+meu+pedido&type=phone_number&app_absent=0"
+              target="_blank"
+              class="btn-orcamento"
+              >Pedir Orçamento</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 8rem 0 4rem 0; min-height: 80vh;">
+    <div class="admin-container" id="login-section">
+    <div class="admin-header">
+      <h2>Acesso Restrito</h2>
+      <p>Faça login para editar o site</p>
+    </div>
+    <form id="login-form">
+      <div class="admin-form-group">
+        <label>E-mail:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="admin-form-group">
+        <label>Senha:</label>
+        <input type="password" id="senha" required>
+      </div>
+      <button type="submit" class="admin-btn">Entrar</button>
+      <p id="login-error" style="color: red; display: none;">Login ou senha incorretos.</p>
+    </form>
+  </div>
+
+  <div class="admin-container" id="dashboard">
+    <div class="admin-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <button id="btn-logout" class="admin-btn" style="background: #333;">Sair</button>
+    </div>
+
+    <!-- Adicionar Serviço na Home -->
+    <div class="admin-section">
+      <h3>1. Adicionar Serviço (Página Inicial)</h3>
+      <form id="form-home">
+        <div class="admin-form-group">
+          <label>Título:</label>
+          <input type="text" id="home-titulo" required>
+        </div>
+        <div class="admin-form-group">
+          <label>Descrição:</label>
+          <input type="text" id="home-descricao" required>
+        </div>
+        <button type="submit" class="admin-btn">Adicionar Serviço</button>
+      </form>
+      <ul class="item-list" id="lista-home"></ul>
+    </div>
+
+    <!-- Adicionar Serviço na Página Serviços -->
+    <div class="admin-section">
+      <h3>2. Adicionar Produto (Página Serviços)</h3>
+      <form id="form-servicos">
+        <div class="admin-form-group">
+          <label>Nome do Produto:</label>
+          <input type="text" id="servico-nome" required>
+        </div>
+        <div class="admin-form-group">
+          <label>Preço (ex: Sob consulta):</label>
+          <input type="text" id="servico-preco" required>
+        </div>
+        <div class="admin-form-group">
+          <label>Foto do Produto:</label>
+          <input type="file" id="servico-foto" accept="image/*" required>
+        </div>
+        <button type="submit" class="admin-btn" id="btn-add-servico">Adicionar Produto</button>
+      </form>
+      <ul class="item-list" id="lista-servicos"></ul>
+    </div>
+
+    <!-- Adicionar Foto no Portfólio -->
+    <div class="admin-section">
+      <h3>3. Adicionar Foto (Portfólio)</h3>
+      <form id="form-portfolio">
+        <div class="admin-form-group">
+          <label>Foto:</label>
+          <input type="file" id="portfolio-foto" accept="image/*" required>
+        </div>
+        <button type="submit" class="admin-btn" id="btn-add-portfolio">Adicionar Foto</button>
+      </form>
+      <ul class="item-list" id="lista-portfolio"></ul>
+    </div>
+  </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content container">
+      <div class="footer-section footer-logo-section">
+        <a href="/index.html">
+        <img src="/img/logo.jpg" alt="Logo Gráfica Elevada" class="footer-logo" />
+        <h3>Gráfica Elevada</h3>
+        </a>
+      </div>
+      <div class="footer-section">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/html/sobreNós.html">Sobre Nós</a></li>
+          <li><a href="/html/serviços.html">Serviços</a></li>
+          <li><a href="/html/portfólio.html">Portfólio</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contatos</h4>
+        <ul>
+          <li>
+            <a href="https://api.whatsapp.com/send/?phone=5583981985937&text=Ol%C3%A1%2C+quero+fechar+o+meu+pedido&type=phone_number&app_absent=0" target="_blank">WhatsApp</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/graficaelevada/?hl=pt-br" target="_blank">Instagram</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Formas de Pagamento</h4>
+        <div class="payment-methods">
+          <p>Aceitamos as principais formas de pagamento:</p>
+          <div class="payment-icons">
+            <span data-method="pix" title="PIX">
+              <img src="/img/svg/pix-svgrepo-com.svg" alt="PIX" />
+            </span>
+            <span data-method="visa" title="VISA">
+              <img src="/img/svg/visa-3-svgrepo-com.svg" alt="VISA" />
+            </span>
+            <span data-method="master" title="MASTER">
+              <img src="/img/svg/mastercard-svgrepo-com.svg" alt="MASTER" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Gráfica Elevada. Todos os direitos reservados.</p>
+      <p class="dev-credit">Desenvolvido por Felipe Jesus</p>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top-btn" title="Voltar ao topo"><img src="/img/svg/angulo-da-seta-para-cima.png" alt="Voltar ao topo"></a>
+  
+  <script type="module" src="/script/javascript.js"></script>
+  <script type="module" src="/script/admin.js"></script>
+</body>
+</html>
+

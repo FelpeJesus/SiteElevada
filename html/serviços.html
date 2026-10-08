@@ -19,7 +19,7 @@
   <body>
     <header class="navbar">
       <div class="container">
-        <a href="/index.html" class="logo">
+        <a href="/html/index.html" class="logo">
           <img src="/img/logo.jpg" alt="Logo Gráfica Elevada" />
           <span><strong>Gráfica</strong>Elevada</span>
         </a>
@@ -53,71 +53,8 @@
           SERVIÇOS PARA <strong>ELEVAR</strong> A SUA EMPRESA!
         </h2>
 
-        <div class="produtos-grid">
-          <!-- Substitua 'imagens/servicos/placeholder.jpg' pelo caminho real das suas imagens -->
-          <div class="produto-item">
-            <img src="/img/produto1.jpeg" alt="Wind Banners" />
-            <p class="produto-nome">WIND BANNERS</p>
-            <p class="produto-preco">Sob consulta</p>
-          </div>
-          <div class="produto-item">
-            <img
-              src="/img/produto2.jpeg"
-              alt="Cartão de Visita"
-            />
-            <p class="produto-nome">CARTÃO DE VISITA</p>
-            <p class="produto-preco">A partir de R$ 80,00</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto3.jpeg" alt="Panfletos" />
-            <p class="produto-nome">PANFLETOS</p>
-            <p class="produto-preco">A partir de R$ 120,00</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto1.jpeg" alt="Banners" />
-            <p class="produto-nome">BANNERS</p>
-            <p class="produto-preco">A partir de R$ 50,00</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto2.jpeg" alt="Tapetes" />
-            <p class="produto-nome">TAPETES</p>
-            <p class="produto-preco">Sob consulta</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto3.jpeg" alt="Crachá" />
-            <p class="produto-nome">CRACHÁ</p>
-            <p class="produto-preco">A partir de R$ 15,00</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto1.jpeg" alt="Crachá de Eventos" />
-            <p class="produto-nome">CRACHÁ DE EVENTOS</p>
-            <p class="produto-preco">A partir de R$ 10,00</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto2.jpeg" alt="Sacolas" />
-            <p class="produto-nome">SACOLAS</p>
-            <p class="produto-preco">Sob consulta</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto3.jpeg" alt="Talão de Pedidos" />
-            <p class="produto-nome">TALÃO DE PEDIDOS</p>
-            <p class="produto-preco">A partir de R$ 90,00</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto1.jpeg" alt="Adesivos" />
-            <p class="produto-nome">ADESIVOS</p>
-            <p class="produto-preco">A partir de R$ 30,00</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto2.jpeg" alt="Capa de Garrafão" />
-            <p class="produto-nome">CAPA DE GARRAFÃO</p>
-            <p class="produto-preco">Sob consulta</p>
-          </div>
-          <div class="produto-item">
-            <img src="/img/produto3.jpeg" alt="Pulseiras Personalizadas" />
-            <p class="produto-nome">PULSEIRAS PERSONALIZADAS</p>
-            <p class="produto-preco">A partir de R$ 40,00</p>
-          </div>
+        <div class="produtos-grid" id="grid-todos-servicos">
+          <!-- Os itens serão carregados automaticamente a partir de /config/dados.js -->
         </div>
 
         <h3 class="portfolio-subtitulo">E MUITO MAIS....</h3>
@@ -127,7 +64,7 @@
     <footer class="site-footer">
       <div class="footer-content container">
         <div class="footer-section footer-logo-section">
-          <a href="/index.html">
+          <a href="/html/index.html">
           <img
             src="/img/logo.jpg"
             alt="Logo Gráfica Elevada"
@@ -187,8 +124,8 @@
         <p class="dev-credit">Desenvolvido por Felipe Jesus</p>
       </div>
     </footer>
-    <a href="#" class="back-to-top-btn" title="Voltar ao topo"><img src="../img/svg/angulo-da-seta-para-cima.png" alt="Voltar ao topo"></a>
-    <!-- Adiciona o script para o menu flutuante -->
-    <script src="/script/javascript.js"></script>
+    <a href="#" class="back-to-top-btn" title="Voltar ao topo"><img src="/img/svg/angulo-da-seta-para-cima.png" alt="Voltar ao topo"></a>
+    <!-- Adiciona o script principal via módulo (Firebase) -->
+    <script type="module" src="/script/javascript.js"></script>
   </body>
 </html>
