@@ -28,7 +28,7 @@ window.addEventListener("scroll", function () {
 // Menu hambúrguer
 (function () {
   const toggle = document.querySelector(".menu-toggle");
-  const nav    = document.querySelector(".navbar nav");
+  const nav = document.querySelector(".navbar nav");
 
   if (!toggle || !nav) return;
 
@@ -49,66 +49,82 @@ window.addEventListener("scroll", function () {
   });
 })();
 
-
-import { db } from "../config/firebase-config.js";
-import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
-
 // ----------------------------------------------------------------------
-// RENDERIZAÇÃO DINÂMICA DE DADOS (Firebase)
+// RENDERIZAÇÃO DINÂMICA VIA DADOS.JS
 // ----------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", async function () {
-  try {
-    // 1. Carregar Serviços Principais (Home)
-    const gridPrincipais = document.getElementById("grid-servicos-principais");
-    if (gridPrincipais) {
-      gridPrincipais.innerHTML = "<p>Carregando serviços...</p>";
-      const snapHome = await getDocs(collection(db, "servicosPrincipais"));
-      gridPrincipais.innerHTML = "";
-      snapHome.forEach(doc => {
-        const servico = doc.data();
-        gridPrincipais.innerHTML += `
-          <div class="servico-card">
-            <h3>${servico.titulo}</h3>
-            <p>${servico.descricao}</p>
-          </div>
-        `;
-      });
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof window.SiteConfig === "undefined") return;
+  const config = window.SiteConfig;
 
-    // 2. Carregar Todos os Serviços (Página Serviços)
-    const gridTodos = document.getElementById("grid-todos-servicos");
-    if (gridTodos) {
-      gridTodos.innerHTML = "<p>Carregando produtos...</p>";
-      const snapServicos = await getDocs(collection(db, "todosServicos"));
-      gridTodos.innerHTML = "";
-      snapServicos.forEach(doc => {
-        const servico = doc.data();
-        gridTodos.innerHTML += `
-          <div class="produto-item">
-            <img src="${servico.imagem}" alt="${servico.nome}" />
-            <p class="produto-nome">${servico.nome}</p>
-            <p class="produto-preco">${servico.preco}</p>
-          </div>
-        `;
-      });
-    }
-
-    // 3. Carregar Portfólio (Página Portfólio)
-    const gridPortfolio = document.getElementById("grid-portfolio");
-    if (gridPortfolio) {
-      gridPortfolio.innerHTML = "<p>Carregando portfólio...</p>";
-      const snapPortfolio = await getDocs(collection(db, "portfolio"));
-      gridPortfolio.innerHTML = "";
-      snapPortfolio.forEach(doc => {
-        const item = doc.data();
-        gridPortfolio.innerHTML += `
-          <div class="gallery-item">
-            <img src="${item.imagem}" alt="${item.alt}" />
-          </div>
-        `;
-      });
-    }
-  } catch (error) {
-    console.error("Erro ao carregar dados do Firebase:", error);
+  // 1. Home (Serviços Principais)
+  const gridPrincipais = document.querySelector(".servicos-grid");
+  if (gridPrincipais && config.servicosPrincipais) {
+    gridPrincipais.innerHTML = "";
+    config.servicosPrincipais.forEach(servico => {
+      gridPrincipais.innerHTML += `
+        <div class="servico-card">
+          <h3>${servico.titulo}</h3>
+          <p>${servico.descricao}</p>
+        </div>
+      `;
+    });
   }
+
+  // 2. Página de Serviços (Torna os itens clicáveis)
+  const gridTodos = document.getElementById("grid-todos-servicos");
+  if (gridTodos && config.todosServicos) {
+    gridTodos.innerHTML = "";
+    // O "index" é o número da posição do produto na lista (0, 1, 2...)
+    config.todosServicos.forEach((servico, index) => {
+      gridTodos.innerHTML += `
+        <a href="/html/detalhes.html?id=${index}" class="produto-item" style="cursor: pointer;">
+          <img src="${servico.imagem}" alt="${servico.nome}" />
+          <p class="produto-nome">${servico.nome}</p>
+          <p class="produto-preco">${servico.preco}</p>
+        </a>
+      `;
+    });
+  }
+
+  // 3. Página de Detalhes do Produto
+  const detalhesContainer = document.getElementById("detalhes-produto-container");
+  if (detalhesContainer && config.todosServicos) {
+    // Pega o número do ID na URL (ex: ?id=0)
+    const urlParams = new URLSearchParams(window.location.search);
+    const produtoId = urlParams.get('id');
+
+    // Verifica se o ID existe e encontra o produto
+    if (produtoId !== null && config.todosServicos[produtoId]) {
+      const produto = config.todosServicos[produtoId];
+
+      // Cria uma mensagem personalizada para o WhatsApp
+      const mensagemWhats = encodeURIComponent(`Olá, gostaria de saber mais sobre o produto: ${produto.nome}`);
+      const linkWhats = `https://api.whatsapp.com/send/?phone=5583981985937&text=${mensagemWhats}&type=phone_number&app_absent=0`;
+
+      detalhesContainer.innerHTML = `
+        <div class="detalhes-imagem">
+            <img src="${produto.imagem}" alt="${produto.nome}">
+        </div>
+        <div class="detalhes-info">
+            <h2>${produto.nome}</h2>
+            <p class="preco-destaque">${produto.preco}</p>
+            
+            ${produto.tamanho ? `<p><strong>Tamanho:</strong> ${produto.tamanho}</p>` : ''}
+            ${produto.detalhes ? `<p><strong>Mais Detalhes:</strong> <br>${produto.detalhes}</p>` : ''}
+            
+            <div style="margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;">
+                <a href="${linkWhats}" target="_blank" class="btn-orcamento-principal">
+                  Pedir Orçamento no WhatsApp
+                </a>
+                <a href="/html/serviços.html" class="btn-voltar-servicos">
+                  <- Voltar para Serviços
+                </a>
+            </div>
+        </div>
+      `;
+    } else {
+      detalhesContainer.innerHTML = `<p>Produto não encontrado. <a href="/html/serviços.html" style="color:var(--cor-magenta)">Voltar aos serviços</a>.</p>`;
+    }
+  }
+  
 });

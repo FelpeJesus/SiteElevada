@@ -28,13 +28,13 @@ body {
     color: var(--cor-texto);
     line-height: 1.6;
 }
-
+/* Container centralizado */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
-
+/* Links */
 a {
     color: var(--cor-dourada);
     text-decoration: none;
@@ -245,7 +245,7 @@ a {
 
 .servico-card {
     /* Efeito de vidro fosco */
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: #00afef3d;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 2rem;
@@ -884,4 +884,84 @@ footer .social-links a {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
     }
+}
+
+/* =========================================
+   PÁGINA DE DETALHES DO PRODUTO
+========================================= */
+.detalhes-produto-wrapper {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.detalhes-imagem {
+    flex: 1;
+}
+
+.detalhes-imagem img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.detalhes-info {
+    flex: 1.2;
+}
+
+.detalhes-info h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    color: var(--cor-dourada);
+    margin-bottom: 0.5rem;
+}
+
+.detalhes-info .preco-destaque {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--cor-ciano);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+}
+
+.detalhes-info p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.detalhes-info strong {
+    color: #fff;
+}
+
+/* Responsividade para telemóveis */
+@media (max-width: 768px) {
+    .detalhes-produto-wrapper {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+}
+
+/* Estilo para o botão de voltar nos detalhes do produto */
+.btn-voltar-servicos {
+    color: var(--cor-ciano);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.btn-voltar-servicos:hover {
+    color: var(--cor-magenta);
+    transform: translateX(-5px); /* Dá um pequeno "pulo" para a esquerda indicando voltar */
 }

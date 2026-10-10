@@ -4,17 +4,30 @@ window.SiteConfig = {
     // ----------------------------------------------------------------------
     servicosPrincipais: [
         {
-            titulo: "Cartões de Visita",
-            descricao: "Acabamentos premium, verniz localizado e mais."
+            titulo: "Wind Banners",
+            descricao: "Exposição de produtos e promoções em banners de alta qualidade."
         },
         {
-            titulo: "Adesivos e Rótulos",
-            descricao: "Recorte especial para seus produtos e embalagens."
+            titulo: "Cartão de Visita",
+            descricao: "Crie uma impressão profissional para causar uma ótima primeira impressão."
         },
         {
-            titulo: "Banners e Lonas",
-            descricao: "Impressão em grande formato para seu evento ou fachada."
-        }
+            titulo: "Panfletos",
+            descricao: "Distribua informações de forma eficaz com panfletos personalizados."
+        },
+        {
+            titulo: "Tapetes",
+            descricao: "Adicione estilo e segurança aos seus espaços com tapetes personalizados."
+        },
+        {
+            titulo: "Crachás",
+            descricao: "Identifique sua equipe com crachás personalizados e profissionais."
+        },
+        {
+            titulo: "Sacolas",
+            descricao: "Adicione estilo e segurança aos seus espaços com sacolas personalizadas."
+        },
+        
     ],
 
     // ----------------------------------------------------------------------
@@ -23,28 +36,76 @@ window.SiteConfig = {
     // alterando a imagem, o nome e o preço.
     // ----------------------------------------------------------------------
     todosServicos: [
-        { imagem: "/img/produto1.jpeg", nome: "WIND BANNERS", preco: "Sob consulta" },
-        { imagem: "/img/produto2.jpeg", nome: "CARTÃO DE VISITA", preco: "A partir de R$ 80,00" },
-        { imagem: "/img/produto3.jpeg", nome: "PANFLETOS", preco: "A partir de R$ 120,00" },
-        { imagem: "/img/produto1.jpeg", nome: "BANNERS", preco: "A partir de R$ 50,00" },
-        { imagem: "/img/produto2.jpeg", nome: "TAPETES", preco: "Sob consulta" },
-        { imagem: "/img/produto3.jpeg", nome: "CRACHÁ", preco: "A partir de R$ 15,00" },
-        { imagem: "/img/produto1.jpeg", nome: "CRACHÁ DE EVENTOS", preco: "A partir de R$ 10,00" },
-        { imagem: "/img/produto2.jpeg", nome: "SACOLAS", preco: "Sob consulta" },
-        { imagem: "/img/produto3.jpeg", nome: "TALÃO DE PEDIDOS", preco: "A partir de R$ 90,00" },
-        { imagem: "/img/produto1.jpeg", nome: "ADESIVOS", preco: "A partir de R$ 30,00" },
-        { imagem: "/img/produto2.jpeg", nome: "CAPA DE GARRAFÃO", preco: "Sob consulta" },
-        { imagem: "/img/produto3.jpeg", nome: "PULSEIRAS PERSONALIZADAS", preco: "A partir de R$ 40,00" }
-    ],
-
-    // ----------------------------------------------------------------------
-    // 3. PORTFÓLIO (Exibido na página de Portfólio)
-    // Para adicionar mais fotos, adicione uma nova linha com o caminho da imagem.
-    // ----------------------------------------------------------------------
-    portfolio: [
-        { imagem: "/img/produto1.jpeg", alt: "Exemplo de trabalho" },
-        { imagem: "/img/produto2.jpeg", alt: "Exemplo de trabalho" },
-        { imagem: "/img/produto3.jpeg", alt: "Exemplo de trabalho" }
-    ]
-};
-
+    { 
+        imagem: "/img/produto1.jpeg", 
+        nome: "CARTÃO DE VISITA", 
+        preco: "A partir de R$ 80,00",
+        tamanho: "9x5 cm",
+        detalhes: "Impresso em papel Couchê 300g, com verniz localizado frente e verso. Ideal para causar uma ótima primeira impressão e fechar grandes negócios." 
+    },
+    { 
+        imagem: "/img/produto2.jpeg", 
+        nome: "BANNERS", 
+        preco: "A partir de R$ 50,00",
+        tamanho: "Vários tamanhos disponíveis",
+        detalhes: "Impressão digital de alta resolução em lona resistente, com acabamento em bastão e corda. Perfeito para destacar a sua loja ou evento." 
+    },
+    { 
+        imagem: "/img/produto3.jpeg", 
+        nome: "PANFLETOS", 
+        preco: "A partir de R$ 30,00",
+        tamanho: "Vários tamanhos disponíveis",
+        detalhes: "Impresso em papel offset 150g, com acabamento em folha. Perfeito para distribuir informações de forma eficaz." 
+    },
+    { 
+        imagem: "/img/produto3.jpeg", 
+        nome: "PANFLETOS", 
+        preco: "A partir de R$ 30,00",
+        tamanho: "Vários tamanhos disponíveis",
+        detalhes: "Impresso em papel offset 150g, com acabamento em folha. Perfeito para distribuir informações de forma eficaz." 
+    },
+    { 
+        imagem: "/img/produto3.jpeg", 
+        nome: "PANFLETOS", 
+        preco: "A partir de R$ 30,00",
+        tamanho: "Vários tamanhos disponíveis",
+        detalhes: "Impresso em papel offset 150g, com acabamento em folha. Perfeito para distribuir informações de forma eficaz." 
+    },
+    { 
+        imagem: "/img/produto3.jpeg", 
+        nome: "PANFLETOS", 
+        preco: "A partir de R$ 30,00",
+        tamanho: "Vários tamanhos disponíveis",
+        detalhes: "Impresso em papel offset 150g, com acabamento em folha. Perfeito para distribuir informações de forma eficaz." 
+    },
+    { 
+        imagem: "/img/produto3.jpeg", 
+        nome: "PANFLETOS", 
+        preco: "A partir de R$ 30,00",
+        tamanho: "Vários tamanhos disponíveis",
+        detalhes: "Impresso em papel offset 150g, com acabamento em folha. Perfeito para distribuir informações de forma eficaz." 
+    },
+    { 
+        imagem: "/img/produto3.jpeg", 
+        nome: "PANFLETOS", 
+        preco: "A partir de R$ 30,00",
+        tamanho: "Vários tamanhos disponíveis",
+        detalhes: "Impresso em papel offset 150g, com acabamento em folha. Perfeito para distribuir informações de forma eficaz." 
+    },
+    { 
+        imagem: "/img/produto3.jpeg", 
+        nome: "PANFLETOS", 
+        preco: "A partir de R$ 30,00",
+        tamanho: "Vários tamanhos disponíveis",
+        detalhes: "Impresso em papel offset 150g, com acabamento em folha. Perfeito para distribuir informações de forma eficaz." 
+    },
+    { 
+        imagem: "/img/produto3.jpeg", 
+        nome: "PANFLETOS", 
+        preco: "A partir de R$ 30,00",
+        tamanho: "Vários tamanhos disponíveis",
+        detalhes: "Impresso em papel offset 150g, com acabamento em folha. Perfeito para distribuir informações de forma eficaz." 
+    },
+    // ... continue para os outros produtos
+],
+}
